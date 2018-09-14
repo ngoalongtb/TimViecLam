@@ -4,37 +4,22 @@ CREATE DATABASE DbWebsiteViecLam
 GO
 --
 USE DbWebsiteViecLam
--- BANG CHUYEN NGANH
-CREATE TABLE ChuyenNganh(
-	MaChuyenNganh INT PRIMARY KEY IDENTITY,
-	TenNganh NVARCHAR(255)
+
+-- BANG NHAN VIEN
+CREATE TABLE NhanVien(
+	MaNhanVien INT PRIMARY KEY IDENTITY,
+	TaiKhoan VARCHAR(50),
+	HoTen NVARCHAR(255),
+	NgaySinh DATE,
+	DiaChi NVARCHAR(255),
+	HinhAnh VARCHAR(255),
+	MatKhau VARCHAR(100),
+	LoaiTaiKhoan INT
 )
 GO
--- BANG TRINH DO
-CREATE TABLE TrinhDo(
-	MaTrinhDo INT PRIMARY KEY IDENTITY,
-	TenTrinhDo NVARCHAR(255)
-)
-GO
--- BANG CHUNG CHI
-CREATE TABLE ChungChi(
-	MaChungChi INT PRIMARY KEY IDENTITY,
-	TenChungChi NVARCHAR(255),
-	NoiCap NVARCHAR(255)
-)
-GO
--- BANG LOAI TAI KHOAN
-CREATE TABLE LoaiTaiKhoan(
-	MaLoaiTaiKhoan INT PRIMARY KEY IDENTITY,
-	TenLoaiTaiKhoan NVARCHAR(255)
-)
-GO
--- BANG TAI KHOAN
-CREATE TABLE TaiKhoan(
-	MaTaiKhoan INT PRIMARY KEY IDENTITY,
-	Email VARCHAR(253),
-	PassWord VARCHAR(100),
-	MaLoaiTaiKhoan	INT
+CREATE TABLE DanhSachCongViec(
+	MaDanhSachCongViec INT PRIMARY KEY IDENTITY,
+	ViTriViecLam NVARCHAR(255)
 )
 GO
 -- BANG NHA TUYEN DUNG
@@ -46,23 +31,25 @@ CREATE TABLE NhaTuyenDung(
 	DiaChiWeb VARCHAR(253),
 	GioiThieu NVARCHAR(255),
 	HinhAnh VARCHAR(255),
-	MaTaiKhoan INT
 )
 GO
 -- BANG PHIEU DANG TUYEN
 CREATE TABLE PhieuDangTuyen(
 	MaPhieuDangTuyen INT PRIMARY KEY IDENTITY,
+	NgayLap DATE,
 	MaNhaTuyenDung INT,
-	MaChuyenNganh INT, 
-	MaTrinhDo INT,
-	MaChungChi INT,
-	TieuDe  NVARCHAR(255),
-	ViTriTuyenDung NVARCHAR(255),
-	MoTaCV NVARCHAR(255),
-	ThoiHanNopHoSo DATE,
-	SoLuongTuyenDung INT,	
+	MaNhanVien INT
+)
+GO
+-- BANG CHI TIET PHIEU DANG TUYEN 
+CREATE TABLE CtPhieuDangTuyen(
+	MaPhieuDangTuyen INT PRIMARY KEY,
+	MaDanhSachCongViec INT,
+	TrinhDo NVARCHAR(255),
+	ThoiHan DATE,
+	SoLuongTuyenDung INT,
 	NoiLamViec NVARCHAR(255),
-	YeuCauKinhNghiem NVARCHAR(255),
+	MoTaYeuCau NVARCHAR(255),
 	LuongKhoiDiem FLOAT
 )
 GO
@@ -75,68 +62,54 @@ CREATE TABLE NguoiTimViec(
 	DiaChi NVARCHAR(255),
 	DienThoai VARCHAR(20),
 	HinhAnh VARCHAR(255),
-	MaTaiKhoan INT
+	TrinhDo NVARCHAR(255),
+	ChuyenNganh NVARCHAR(255),
+	BangCap NVARCHAR(255)
 )
 GO
 -- BANG HO SO XIN VIEC
 CREATE TABLE HoSoXinViec(
 	MaHoSoXinViec INT PRIMARY KEY IDENTITY,
+	NgayLap DATE,
 	MaNguoiTimViec INT,
-	MaChuyenNganh INT,
-	MaTrinhDo INT,
-	MaChungChi INT,
-	TieuDe NVARCHAR(255),
-	KinhNghiem NVARCHAR(255),
-	NguyenVongLamViec NVARCHAR(255),
-	NoiLamViec NVARCHAR(255),
-	LuongKhoiDiem FLOAT
+	MaNhanVien INT,
+	MaDanhSachCongViec INT,
+	MoTa NVARCHAR(255),
+	TrangThai INT
 )
 GO
 
 -- KHOA NGOAI
 
-ALTER TABLE TaiKhoan
-ADD FOREIGN KEY(MaLoaiTaiKhoan) REFERENCES LoaiTaiKhoan(MaLoaiTaiKhoan)
-ON DELETE CASCADE
---
-ALTER TABLE NhaTuyenDung
-ADD FOREIGN KEY(MaTaiKhoan) REFERENCES TaiKhoan(MaTaiKhoan)
-ON DELETE CASCADE
---
-ALTER TABLE NguoiTimViec
-ADD FOREIGN KEY(MaTaiKhoan) REFERENCES TaiKhoan(MaTaiKhoan)
-ON DELETE CASCADE
---
 ALTER TABLE PhieuDangTuyen
 ADD FOREIGN KEY(MaNhaTuyenDung) REFERENCES NhaTuyenDung(MaNhaTuyenDung)
 ON DELETE CASCADE
 --
 ALTER TABLE PhieuDangTuyen
-ADD FOREIGN KEY(MaChuyenNganh) REFERENCES ChuyenNganh(MaChuyenNganh)
+ADD FOREIGN KEY(MaNhanVien) REFERENCES NhanVien(MaNhanVien)
 ON DELETE CASCADE
---
-ALTER TABLE PhieuDangTuyen
-ADD FOREIGN KEY(MaTrinhDo) REFERENCES TrinhDo(MaTrinhDo)
-ON DELETE CASCADE
---
-ALTER TABLE PhieuDangTuyen
-ADD FOREIGN KEY(MaChungChi) REFERENCES ChungChi(MaChungChi)
-ON DELETE CASCADE
---
 --
 ALTER TABLE HoSoXinViec
 ADD FOREIGN KEY(MaNguoiTimViec) REFERENCES NguoiTimViec(MaNguoiTimViec)
 ON DELETE CASCADE
 --
 ALTER TABLE HoSoXinViec
-ADD FOREIGN KEY(MaChuyenNganh) REFERENCES ChuyenNganh(MaChuyenNganh)
+ADD FOREIGN KEY(MaDanhSachCongViec) REFERENCES DanhSachCongViec(MaDanhSachCongViec)
 ON DELETE CASCADE
 --
 ALTER TABLE HoSoXinViec
-ADD FOREIGN KEY(MaTrinhDo) REFERENCES TrinhDo(MaTrinhDo)
+ADD FOREIGN KEY(MaNhanVien) REFERENCES NhanVien(MaNhanVien)
 ON DELETE CASCADE
 --
-ALTER TABLE HoSoXinViec
-ADD FOREIGN KEY(MaChungChi) REFERENCES ChungChi(MaChungChi)
+ALTER TABLE CtPhieuDangTuyen
+ADD FOREIGN KEY(MaPhieuDangTuyen) REFERENCES PhieuDangTuyen(MaPhieuDangTuyen)
 ON DELETE CASCADE
 --
+ALTER TABLE CtPhieuDangTuyen
+ADD FOREIGN KEY(MaDanhSachCongViec) REFERENCES DanhSachCongViec(MaDanhSachCongViec)
+ON DELETE CASCADE
+
+
+
+
+
