@@ -1,9 +1,9 @@
 USE master
 GO
-CREATE DATABASE DbWebsiteViecLam
+CREATE DATABASE TimViecLam
 GO
 --
-USE DbWebsiteViecLam
+USE TimViecLam
 
 -- BANG NHAN VIEN
 CREATE TABLE NhanVien(
