@@ -10,11 +10,11 @@ namespace TimViecLam.AppCode
     {
         public const string HOME = "Home";
         public const string NHAN_VIEN = "NhanVien";
-        public const string TAI_KHOAN = "TaiKhoan";
-        public const string DICH_VU = "DichVu";
-        public const string DANG_KY = "DangKy";
-        public const string DANG_KY_ONLINE = "DangKyOnline";
-        public const string CHI_TIET_HOP_DONG = "ChiTietHopDong";
+        public const string NHA_TUYEN_DUNG = "NhaTuyenDung";
+        public const string NGUOI_TIM_VIEC = "NguoiTimViec";
+        public const string PHIEU_DANG_TUYEN = "PhieuDangTuyen";
+        public const string HO_SO_XIN_VIEC = "HoSoXinViec";
+        public const string DANH_SACH_CONG_VIEC = "DanhSachCongViec";
         public const string HOP_DONG = "HopDong";
         public const string THONG_TIN_CA_NHAN = "ThongTinCaNhan";
         public const string DANH_MUC = "DanhMuc";

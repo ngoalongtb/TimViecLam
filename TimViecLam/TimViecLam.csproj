@@ -178,11 +178,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screen\DanhSachCongViecForm.resx">
+      <DependentUpon>DanhSachCongViecForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screen\NguoiTimViecForm.resx">
+      <DependentUpon>NguoiTimViecForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen\NhanVienForm.resx">
       <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\NhaTuyenDungForm.resx">
+      <DependentUpon>NhaTuyenDungForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="EF\AppDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

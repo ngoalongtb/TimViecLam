@@ -16,5 +16,7 @@ namespace TimViecLam.Screen
         {
             InitializeComponent();
         }
+       
+
     }
 }
