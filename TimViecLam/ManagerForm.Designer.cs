@@ -77,7 +77,7 @@
             // 
             this.btnHome.Caption = "Trang chủ";
             this.btnHome.Id = 1;
-            this.btnHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.ImageOptions.Image")));
             this.btnHome.Name = "btnHome";
             this.btnHome.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
@@ -170,7 +170,7 @@
             // 
             // documentManager1
             // 
-            this.documentManager1.ContainerControl = this;
+            this.documentManager1.MdiParent = this;
             this.documentManager1.MenuManager = this.ribbonControl1;
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
