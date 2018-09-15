@@ -38,6 +38,9 @@ namespace TimViecLam
                 case ScreenName.HOME:
                     form = new HomeForm();
                     break;
+                case ScreenName.NHAN_VIEN:
+                    form = new NhanVienForm();
+                    break;
                 default:
                     break;
             }
@@ -45,6 +48,11 @@ namespace TimViecLam
             form.MdiParent = this;
             form.Show();
 
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Trigger(ScreenName.NHAN_VIEN);
         }
     }
 }

@@ -181,6 +181,9 @@
       <DependentUpon>AppDB.edmx</DependentUpon>
       <LastGenOutput>AppDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Refresh2_32x32.png" />
+    <None Include="Resources\Clear_32x32.png" />
+    <None Include="Resources\Apply_32x32.png" />
     <None Include="Resources\humanresource.jpg" />
     <None Include="Resources\Login-icon %281%29.png" />
   </ItemGroup>

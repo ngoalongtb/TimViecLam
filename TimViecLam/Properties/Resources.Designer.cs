@@ -63,6 +63,26 @@ namespace TimViecLam.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Apply_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Apply_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clear_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Clear_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap humanresource {
             get {
                 object obj = ResourceManager.GetObject("humanresource", resourceCulture);
@@ -76,6 +96,16 @@ namespace TimViecLam.Properties {
         internal static System.Drawing.Bitmap Login_icon__1_ {
             get {
                 object obj = ResourceManager.GetObject("Login-icon (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh2_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

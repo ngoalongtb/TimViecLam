@@ -9,7 +9,7 @@ namespace TimViecLam.AppCode
     public class ScreenName
     {
         public const string HOME = "Home";
-        public const string LOAI_TAI_KHOAN = "LoaiTaiKhoan";
+        public const string NHAN_VIEN = "NhanVien";
         public const string TAI_KHOAN = "TaiKhoan";
         public const string DICH_VU = "DichVu";
         public const string DANG_KY = "DangKy";
