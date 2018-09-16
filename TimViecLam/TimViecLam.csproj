@@ -184,6 +184,9 @@
     <EmbeddedResource Include="Screen\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screen\HoSoXinViecForm.resx">
+      <DependentUpon>HoSoXinViecForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen\NguoiTimViecForm.resx">
       <DependentUpon>NguoiTimViecForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\NhaTuyenDungForm.resx">
       <DependentUpon>NhaTuyenDungForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\PhieuDangTuyenForm.resx">
+      <DependentUpon>PhieuDangTuyenForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="EF\AppDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
