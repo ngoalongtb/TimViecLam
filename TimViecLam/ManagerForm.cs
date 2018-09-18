@@ -41,6 +41,9 @@ namespace TimViecLam
                 case ScreenName.NHAN_VIEN:
                     form = new NhanVienForm();
                     break;
+                case ScreenName.NHA_TUYEN_DUNG:
+                    form = new NhaTuyenDungForm();
+                    break;
                 default:
                     break;
             }
@@ -53,6 +56,11 @@ namespace TimViecLam
         private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Trigger(ScreenName.NHAN_VIEN);
+        }
+
+        private void btnNhaTuyenDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Trigger(ScreenName.NHA_TUYEN_DUNG);
         }
     }
 }

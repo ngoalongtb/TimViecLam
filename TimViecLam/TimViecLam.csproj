@@ -113,35 +113,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen\ChiTietPhieuDangTuyenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\ChiTietPhieuDangTuyenForm.Designer.cs">
-      <DependentUpon>ChiTietPhieuDangTuyenForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen\DanhSachCongViecForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\DanhSachCongViecForm.Designer.cs">
-      <DependentUpon>DanhSachCongViecForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screen\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screen\HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen\HoSoXinViecForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\HoSoXinViecForm.Designer.cs">
-      <DependentUpon>HoSoXinViecForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen\NguoiTimViecForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\NguoiTimViecForm.Designer.cs">
-      <DependentUpon>NguoiTimViecForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Screen\NhanVienForm.cs">
       <SubType>Form</SubType>
@@ -154,12 +130,6 @@
     </Compile>
     <Compile Include="Screen\NhaTuyenDungForm.Designer.cs">
       <DependentUpon>NhaTuyenDungForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen\PhieuDangTuyenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\PhieuDangTuyenForm.Designer.cs">
-      <DependentUpon>PhieuDangTuyenForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -183,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen\NhanVienForm.resx">
       <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\NhaTuyenDungForm.resx">
+      <DependentUpon>NhaTuyenDungForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="EF\AppDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
