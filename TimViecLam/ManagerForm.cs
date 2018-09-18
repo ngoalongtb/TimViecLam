@@ -44,18 +44,6 @@ namespace TimViecLam
                 case ScreenName.NHA_TUYEN_DUNG:
                     form = new NhaTuyenDungForm();
                     break;
-                case ScreenName.NGUOI_TIM_VIEC:
-                    form = new NguoiTimViecForm();
-                    break;
-                case ScreenName.PHIEU_DANG_TUYEN:
-                    form = new PhieuDangTuyenForm();
-                    break;
-                case ScreenName.HO_SO_XIN_VIEC:
-                    form = new HoSoXinViecForm();
-                    break;
-                case ScreenName.DANH_SACH_CONG_VIEC:
-                    form = new DanhSachCongViecForm();
-                    break;
                 default:
                     break;
             }
@@ -73,26 +61,6 @@ namespace TimViecLam
         private void btnNhaTuyenDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Trigger(ScreenName.NHA_TUYEN_DUNG);
-        }
-
-        private void btnNguoiTimViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Trigger(ScreenName.NGUOI_TIM_VIEC);
-        }
-
-        private void btnDanhSachCongViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Trigger(ScreenName.DANH_SACH_CONG_VIEC);
-        }
-
-        private void btnPhieuDangTuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Trigger(ScreenName.PHIEU_DANG_TUYEN);
-        }
-
-        private void btnHoSoXinViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Trigger(ScreenName.HO_SO_XIN_VIEC);
         }
     }
 }
