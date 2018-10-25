@@ -17,6 +17,7 @@ namespace TimViecLam
         public ManagerForm()
         {
             InitializeComponent();
+            Trigger(ScreenName.HOME);
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

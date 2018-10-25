@@ -113,12 +113,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Screen\ChiTietPhieuDangTuyenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen\ChiTietPhieuDangTuyenForm.Designer.cs">
-      <DependentUpon>ChiTietPhieuDangTuyenForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screen\DanhSachCongViecForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,7 +212,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -232,6 +228,7 @@
       <DependentUpon>AppDB.edmx</DependentUpon>
       <LastGenOutput>AppDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ThongTinTuyenDun.jpg" />
     <None Include="Resources\Refresh2_32x32.png" />
     <None Include="Resources\Clear_32x32.png" />
     <None Include="Resources\Apply_32x32.png" />

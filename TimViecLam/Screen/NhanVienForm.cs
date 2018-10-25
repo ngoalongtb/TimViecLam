@@ -150,7 +150,7 @@ namespace TimViecLam.Screen
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Tồn tại Máy tính trong danh mục này");
+                    MessageBox.Show("Có lỗi xảy ra");
                 }
             }
         }

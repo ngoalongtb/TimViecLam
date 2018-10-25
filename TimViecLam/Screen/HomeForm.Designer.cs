@@ -67,19 +67,20 @@
             // 
             // panel3
             // 
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.BackgroundImage = global::TimViecLam.Properties.Resources.ThongTinTuyenDun;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(0, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1008, 480);
+            this.panel3.Size = new System.Drawing.Size(1008, 380);
             this.panel3.TabIndex = 3;
             // 
             // HomeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1008, 480);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Calibri", 12F);
             this.Name = "HomeForm";
             this.Text = "Trang chủ";

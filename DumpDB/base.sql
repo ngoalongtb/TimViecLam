@@ -43,14 +43,15 @@ CREATE TABLE PhieuDangTuyen(
 GO
 -- BANG CHI TIET PHIEU DANG TUYEN 
 CREATE TABLE CtPhieuDangTuyen(
-	MaPhieuDangTuyen INT PRIMARY KEY,
+	MaPhieuDangTuyen INT,
 	MaDanhSachCongViec INT,
 	TrinhDo NVARCHAR(255),
 	ThoiHan DATE,
 	SoLuongTuyenDung INT,
 	NoiLamViec NVARCHAR(255),
 	MoTaYeuCau NVARCHAR(255),
-	LuongKhoiDiem FLOAT
+	LuongKhoiDiem FLOAT,
+	PRIMARY KEY(MaPhieuDangTuyen, MaDanhSachCongViec)
 )
 GO
 -- BANG NGUOI TIM VIEC

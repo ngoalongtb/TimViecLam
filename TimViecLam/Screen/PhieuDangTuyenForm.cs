@@ -17,7 +17,7 @@ namespace TimViecLam.Screen
         {
             InitializeComponent();
         }
-        private void HoSoXinViecForm_Load(object sender, EventArgs e)
+        private void PhieuDangTuyenForm_Load(object sender, EventArgs e)
         {
 
             LoadDtgv();
@@ -36,7 +36,7 @@ namespace TimViecLam.Screen
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x }).ToList();
+            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x.CtPhieuDangTuyen.MaDanhSachCongViec, x.CtPhieuDangTuyen.TrinhDo, x.CtPhieuDangTuyen.ThoiHan, x.CtPhieuDangTuyen.SoLuongTuyenDung, x.CtPhieuDangTuyen.NoiLamViec, x.CtPhieuDangTuyen.LuongKhoiDiem, x.CtPhieuDangTuyen.MoTaYeuCau, x }).ToList();
         }
         public void ChangHeader()
         {
@@ -44,7 +44,13 @@ namespace TimViecLam.Screen
             dtgv.Columns["NgayLap"].HeaderText = "Ngày lập";
             dtgv.Columns["MaNhaTuyenDung"].HeaderText = "Mã NTV";
             dtgv.Columns["MaNhanVien"].HeaderText = "Mã NV";
-            
+
+            dtgv.Columns["TrinhDo"].HeaderText = "Trình độ";
+            dtgv.Columns["ThoiHan"].HeaderText = "Thời hạn";
+            dtgv.Columns["SoLuongTuyenDung"].HeaderText = "Số lượng tuyển dụng";
+            dtgv.Columns["NoiLamViec"].HeaderText = "Nơi làm việc";
+            dtgv.Columns["MoTaYeuCau"].HeaderText = "Mô tả yêu cầu";
+            dtgv.Columns["LuongKhoiDiem"].HeaderText = "Lương khởi điểm";
 
         }
         public void LoadDataBinding()
@@ -53,7 +59,16 @@ namespace TimViecLam.Screen
             dtpkNgayLap.DataBindings.Add("Value", dtgv.DataSource, "NgayLap", true, DataSourceUpdateMode.Never);
             cbxMaNTD.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhaTuyenDung", true, DataSourceUpdateMode.Never);
             cbxMaNhanVien.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhanVien", true, DataSourceUpdateMode.Never);
-           
+
+            cbxMaDanhSachCongViec.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaDanhSachCongViec", true, DataSourceUpdateMode.Never);
+            txtTrinhDo.DataBindings.Add("Text", dtgv.DataSource, "TrinhDo", true, DataSourceUpdateMode.Never);
+            dtpkThoiHan.DataBindings.Add("Value", dtgv.DataSource, "ThoiHan", true, DataSourceUpdateMode.Never);
+
+            txtSoLuongTuyenDung.DataBindings.Add("Text", dtgv.DataSource, "SoLuongTuyenDung", true, DataSourceUpdateMode.Never);
+            txtNoiLamViec.DataBindings.Add("Text", dtgv.DataSource, "NoiLamViec", true, DataSourceUpdateMode.Never);
+            txtMoTaYeuCau.DataBindings.Add("Text", dtgv.DataSource, "MoTaYeuCau", true, DataSourceUpdateMode.Never);
+            txtLuongKhoiDiem.DataBindings.Add("Text", dtgv.DataSource, "LuongKhoiDiem", true, DataSourceUpdateMode.Never);
+            
         }
 
         public void LoadMore()
@@ -66,27 +81,41 @@ namespace TimViecLam.Screen
             cbxMaNhanVien.DisplayMember = "TaiKhoan";
             cbxMaNhanVien.ValueMember = "MaNhanVien";
 
- 
+            cbxMaDanhSachCongViec.DataSource = db.DanhSachCongViecs.ToList();
+            cbxMaDanhSachCongViec.DisplayMember = "ViTriViecLam";
+            cbxMaDanhSachCongViec.ValueMember = "MaDanhSachCongViec";
+
+
         }
 
         public void HideColumn()
         {
             dtgv.Columns["MaPhieuDangTuyen"].Visible = false;
+            dtgv.Columns["MaDanhSachCongViec"].Visible = false;
             dtgv.Columns["x"].Visible = false;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-            PhieuDangTuyen service = new PhieuDangTuyen();
-            service.NgayLap = DateTime.Now;
-            service.MaNhaTuyenDung = (int)cbxMaNTD.SelectedValue;
-            service.MaNhanVien = (int)cbxMaNhanVien.SelectedValue; 
-        
+            PhieuDangTuyen phieuDangTuyen = new PhieuDangTuyen();
+            phieuDangTuyen.NgayLap = DateTime.Now;
+            phieuDangTuyen.MaNhaTuyenDung = (int)cbxMaNTD.SelectedValue;
+            phieuDangTuyen.MaNhanVien = (int)cbxMaNhanVien.SelectedValue;
+
+            phieuDangTuyen.CtPhieuDangTuyen = new CtPhieuDangTuyen();
+            phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
+            phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
+            phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
+            phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
+            phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
+            phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
+            phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
+
 
             try
             {
-                db.PhieuDangTuyens.Add(service);
+                db.PhieuDangTuyens.Add(phieuDangTuyen);
                 db.SaveChanges();
                 
                 db.SaveChanges();
@@ -100,62 +129,67 @@ namespace TimViecLam.Screen
         }
 
 
-        //private void btnsua_click(object sender, eventargs e)
-        //{
-        //    try
-        //    {
-        //        hosoxinviec service = db.hosoxinviecs.find(int.parse(txtmahosoxinviec.text));
-        //        service.ngaylap = datetime.now;
-        //        service.manguoitimviec = (int)cbxmantv.selectedvalue;
-        //        service.manhanvien = (int)cbxmanhanvien.selectedvalue;
-        //        service.madanhsachcongviec = (int)cbxmadanhsachcv.selectedvalue;
-        //        service.mota = txtmota.text;
-        //        service.trangthai = 0;
+        private void btnsua_click(object sender, EventArgs e)
+        {
+            try
+            {
+                PhieuDangTuyen phieuDangTuyen = db.PhieuDangTuyens.Find(int.Parse(txtMaPhieuDangTuyen.Text));
+                phieuDangTuyen.NgayLap = DateTime.Now;
+                phieuDangTuyen.MaNhaTuyenDung = (int)cbxMaNTD.SelectedValue;
+                phieuDangTuyen.MaNhanVien = (int)cbxMaNhanVien.SelectedValue;
+                
+                phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
+                phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
+                phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
+                phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
+                phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
+                phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
+                phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
 
 
-        //        db.savechanges();
-        //        messagebox.show("cập nhật thành công");
-        //        loaddtgv();
-        //    }
-        //    catch (exception)
-        //    {
-        //        messagebox.show("cập nhật không thành công. vui lòng kiểm tra lại");
-        //    }
-        //}
+                db.SaveChanges();
+                MessageBox.Show("Cập nhật thành công");
+                LoadDtgv();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cập nhật không thành công. vui lòng kiểm tra lại");
+            }
+        }
 
 
-        //private void btnXoa_Click(object sender, EventArgs e)
-        //{
-        //    var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa",
-        //                             "Xác nhận!!",
-        //                             MessageBoxButtons.YesNo);
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có chắc chắn muốn xóa",
+                                     "Xác nhận!!",
+                                     MessageBoxButtons.YesNo);
 
-        //    if (confirmResult == DialogResult.Yes)
-        //    {
-        //        try
-        //        {
-        //            HoSoXinViec service = db.HoSoXinViecs.Find(int.Parse(txtMaHoSoXinViec.Text));
-        //            db.HoSoXinViecs.Remove(service);
-        //            db.SaveChanges();
-        //            MessageBox.Show("Xóa thành công");
-        //            LoadDtgv();
-        //        }
-        //        catch (Exception)
-        //        {
-        //            MessageBox.Show("Tồn tại Máy tính trong danh mục này");
-        //        }
-        //    }
-        //}
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    PhieuDangTuyen phieuDangTuyen = db.PhieuDangTuyens.Find(int.Parse(txtMaPhieuDangTuyen.Text));
+                    db.PhieuDangTuyens.Remove(phieuDangTuyen);
+                    db.SaveChanges();
+                    MessageBox.Show("Xóa thành công");
+                    LoadDtgv();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Có lỗi xảy ra");
+                }
+            }
+        }
 
-        //private void btnXem_Click(object sender, EventArgs e)
-        //{
-        //    LoadDtgv();
-        //}
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            LoadDtgv();
+        }
 
-        //private void btnTimKiem_Click(object sender, EventArgs e)
-        //{
-        //    bds.DataSource = db.HoSoXinViecs.Select(x => new { x.MaHoSoXinViec, x.NgayLap, x.MaNhanVien, x.MaNguoiTimViec, x.MaDanhSachCongViec, x.MoTa, x.TrangThai, }).Where(x => x.MaHoSoXinViec.ToString().Contains(txtTimKiem.Text) || x.MoTa.Contains(txtTimKiem.Text)).ToList();
-        //}
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x.CtPhieuDangTuyen.MaDanhSachCongViec, x.CtPhieuDangTuyen.TrinhDo, x.CtPhieuDangTuyen.ThoiHan, x.CtPhieuDangTuyen.SoLuongTuyenDung, x.CtPhieuDangTuyen.NoiLamViec, x.CtPhieuDangTuyen.LuongKhoiDiem, x.CtPhieuDangTuyen.MoTaYeuCau, x }).Where(x => x.MaPhieuDangTuyen.ToString().Contains(txtTimKiem.Text)).ToList();
+        }
 
     }
 }
