@@ -18,6 +18,11 @@ namespace TimViecLam
         {
             InitializeComponent();
             Trigger(ScreenName.HOME);
+
+            if(Session.LoginAccount.LoaiTaiKhoan != 1) // Nhan vien
+            {
+                ribbonPage3.Visible = false;
+            }
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
