@@ -40,7 +40,6 @@
             this.txtBangCap = new System.Windows.Forms.TextBox();
             this.txtChuyenNganh = new System.Windows.Forms.TextBox();
             this.txtTrinhDo = new System.Windows.Forms.TextBox();
-            this.txtHinhAnh = new System.Windows.Forms.TextBox();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
@@ -94,7 +92,6 @@
             this.groupBox1.Controls.Add(this.txtBangCap);
             this.groupBox1.Controls.Add(this.txtChuyenNganh);
             this.groupBox1.Controls.Add(this.txtTrinhDo);
-            this.groupBox1.Controls.Add(this.txtHinhAnh);
             this.groupBox1.Controls.Add(this.txtDienThoai);
             this.groupBox1.Controls.Add(this.txtGioiTinh);
             this.groupBox1.Controls.Add(this.txtDiaChi);
@@ -104,7 +101,6 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -153,7 +149,7 @@
             // 
             // txtBangCap
             // 
-            this.txtBangCap.Location = new System.Drawing.Point(162, 329);
+            this.txtBangCap.Location = new System.Drawing.Point(162, 292);
             this.txtBangCap.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtBangCap.Name = "txtBangCap";
             this.txtBangCap.Size = new System.Drawing.Size(141, 27);
@@ -161,7 +157,7 @@
             // 
             // txtChuyenNganh
             // 
-            this.txtChuyenNganh.Location = new System.Drawing.Point(162, 296);
+            this.txtChuyenNganh.Location = new System.Drawing.Point(162, 259);
             this.txtChuyenNganh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtChuyenNganh.Name = "txtChuyenNganh";
             this.txtChuyenNganh.Size = new System.Drawing.Size(141, 27);
@@ -169,19 +165,11 @@
             // 
             // txtTrinhDo
             // 
-            this.txtTrinhDo.Location = new System.Drawing.Point(162, 258);
+            this.txtTrinhDo.Location = new System.Drawing.Point(162, 221);
             this.txtTrinhDo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtTrinhDo.Name = "txtTrinhDo";
             this.txtTrinhDo.Size = new System.Drawing.Size(141, 27);
             this.txtTrinhDo.TabIndex = 45;
-            // 
-            // txtHinhAnh
-            // 
-            this.txtHinhAnh.Location = new System.Drawing.Point(162, 221);
-            this.txtHinhAnh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtHinhAnh.Name = "txtHinhAnh";
-            this.txtHinhAnh.Size = new System.Drawing.Size(141, 27);
-            this.txtHinhAnh.TabIndex = 45;
             // 
             // txtDienThoai
             // 
@@ -256,7 +244,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(14, 332);
+            this.label9.Location = new System.Drawing.Point(14, 295);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 19);
@@ -267,7 +255,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(14, 296);
+            this.label8.Location = new System.Drawing.Point(14, 259);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 19);
@@ -278,23 +266,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(14, 266);
+            this.label7.Location = new System.Drawing.Point(14, 229);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 19);
             this.label7.TabIndex = 49;
             this.label7.Text = "Trình độ:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(15, 229);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 19);
-            this.label6.TabIndex = 49;
-            this.label6.Text = "Hình ảnh:";
             // 
             // label5
             // 
@@ -467,7 +444,6 @@
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.TextBox txtTrinhDo;
-        private System.Windows.Forms.TextBox txtHinhAnh;
         private System.Windows.Forms.TextBox txtDienThoai;
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtDiaChi;
@@ -475,7 +451,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnThem;

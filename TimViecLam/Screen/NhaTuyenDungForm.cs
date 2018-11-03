@@ -34,7 +34,7 @@ namespace TimViecLam.Screen
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.NhaTuyenDungs.Select(x => new { x.MaNhaTuyenDung, x.TenNhaTuyenDung, x.DiaChi, x.DienThoai, x.DiaChiWeb, x.GioiThieu, x.HinhAnh, x }).ToList();
+            bds.DataSource = db.NhaTuyenDungs.Select(x => new { x.MaNhaTuyenDung, x.TenNhaTuyenDung, x.DiaChi, x.DienThoai, x.DiaChiWeb, x.GioiThieu, x }).ToList();
         }
         public void ChangHeader()
         {
@@ -44,7 +44,6 @@ namespace TimViecLam.Screen
             dtgv.Columns["DienThoai"].HeaderText = "Điện thoại";
             dtgv.Columns["DiaChiWeb"].HeaderText = "Địa chỉ web";
             dtgv.Columns["GioiThieu"].HeaderText = "Giới thiệu";
-            dtgv.Columns["HinhAnh"].HeaderText = "Hình ảnh";
            
 
         }
@@ -56,7 +55,6 @@ namespace TimViecLam.Screen
             txtDienThoai.DataBindings.Add("Text", dtgv.DataSource, "DienThoai", true, DataSourceUpdateMode.Never);
             txtDiaChiWeb.DataBindings.Add("Text", dtgv.DataSource, "DiaChiWeb", true, DataSourceUpdateMode.Never);
             txtGioiThieu.DataBindings.Add("Text", dtgv.DataSource, "GioiThieu", true, DataSourceUpdateMode.Never);
-            txtHinhAnh.DataBindings.Add("Text", dtgv.DataSource, "HinhAnh", true, DataSourceUpdateMode.Never);
         
         }
 
@@ -82,7 +80,6 @@ namespace TimViecLam.Screen
             service.DienThoai = txtDienThoai.Text;
             service.DiaChiWeb = txtDiaChi.Text;
             service.GioiThieu = txtGioiThieu.Text;
-            service.HinhAnh = txtHinhAnh.Text;
            
             try
             {
@@ -115,7 +112,6 @@ namespace TimViecLam.Screen
                 service.DienThoai = txtDienThoai.Text;
                 service.DiaChiWeb = txtDiaChiWeb.Text;
                 service.GioiThieu = txtGioiThieu.Text;
-                service.HinhAnh = txtHinhAnh.Text;
 
                 //if (open.CheckFileExists)
                 //{
@@ -163,7 +159,7 @@ namespace TimViecLam.Screen
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            bds.DataSource = db.NhaTuyenDungs.Select(x => new { x.MaNhaTuyenDung, x.TenNhaTuyenDung, x.DiaChi, x.DienThoai, x.DiaChiWeb, x.GioiThieu, x.HinhAnh }).Where(x => x.MaNhaTuyenDung.ToString().Contains(txtTimKiem.Text) || x.TenNhaTuyenDung.Contains(txtTimKiem.Text)).ToList();
+            bds.DataSource = db.NhaTuyenDungs.Select(x => new { x.MaNhaTuyenDung, x.TenNhaTuyenDung, x.DiaChi, x.DienThoai, x.DiaChiWeb, x.GioiThieu }).Where(x => x.MaNhaTuyenDung.ToString().Contains(txtTimKiem.Text) || x.TenNhaTuyenDung.Contains(txtTimKiem.Text)).ToList();
         }
 
 

@@ -34,7 +34,7 @@ namespace TimViecLam.Screen
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.NhanViens.Select(x => new { x.MaNhanVien, x.TaiKhoan, x.HoTen, x.NgaySinh, x.DiaChi, x.HinhAnh, x.MatKhau, x.LoaiTaiKhoan, x }).ToList();
+            bds.DataSource = db.NhanViens.Select(x => new { x.MaNhanVien, x.TaiKhoan, x.HoTen, x.NgaySinh, x.DiaChi, x.MatKhau, x.LoaiTaiKhoan, x }).ToList();
         }
         public void ChangHeader()
         {
@@ -43,7 +43,6 @@ namespace TimViecLam.Screen
             dtgv.Columns["HoTen"].HeaderText = "Họ tên";
             dtgv.Columns["NgaySinh"].HeaderText = "Ngày sinh";
             dtgv.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dtgv.Columns["HinhAnh"].HeaderText = "HinhAnh";
             dtgv.Columns["MatKhau"].HeaderText = "MatKhau";
             dtgv.Columns["LoaiTaiKhoan"].HeaderText = "Loại tài khoản";
         }
@@ -53,7 +52,6 @@ namespace TimViecLam.Screen
             txtHoTen.DataBindings.Add("Text", dtgv.DataSource, "HoTen", true, DataSourceUpdateMode.Never);
             dtpkNgaySinh.DataBindings.Add("Value", dtgv.DataSource, "NgaySinh", true, DataSourceUpdateMode.Never);
             txtDiaChi.DataBindings.Add("Text", dtgv.DataSource, "DiaChi", true, DataSourceUpdateMode.Never);
-            txtHinhAnh.DataBindings.Add("Text", dtgv.DataSource, "HinhAnh", true, DataSourceUpdateMode.Never);
             txtMatKhau.DataBindings.Add("Text", dtgv.DataSource, "MatKhau", true, DataSourceUpdateMode.Never);
             txtLoaiTaiKhoan.DataBindings.Add("Text", dtgv.DataSource, "x.LoaiTaiKhoan", true, DataSourceUpdateMode.Never);
         }
@@ -80,7 +78,6 @@ namespace TimViecLam.Screen
             service.HoTen = txtHoTen.Text;
             service.DiaChi = txtDiaChi.Text;
             service.LoaiTaiKhoan = int.Parse(txtLoaiTaiKhoan.Text);
-            service.HinhAnh = txtHinhAnh.Text;
             service.NgaySinh = dtpkNgaySinh.Value;
 
             try
@@ -113,7 +110,6 @@ namespace TimViecLam.Screen
                 service.HoTen = txtHoTen.Text;
                 service.DiaChi = txtDiaChi.Text;
                 service.LoaiTaiKhoan = int.Parse(txtLoaiTaiKhoan.Text);
-                service.HinhAnh = txtHinhAnh.Text;
                 service.NgaySinh = dtpkNgaySinh.Value;
 
                 //if (open.CheckFileExists)
@@ -162,7 +158,7 @@ namespace TimViecLam.Screen
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            bds.DataSource = db.NhanViens.Select(x => new { x.MaNhanVien, x.TaiKhoan, x.MatKhau, x.HoTen, x.NgaySinh, x.DiaChi, x.HinhAnh, x.LoaiTaiKhoan }).Where(x => x.MaNhanVien.ToString().Contains(txtTimKiem.Text) || x.TaiKhoan.Contains(txtTimKiem.Text)).ToList();
+            bds.DataSource = db.NhanViens.Select(x => new { x.MaNhanVien, x.TaiKhoan, x.MatKhau, x.HoTen, x.NgaySinh, x.DiaChi, x.LoaiTaiKhoan }).Where(x => x.MaNhanVien.ToString().Contains(txtTimKiem.Text) || x.TaiKhoan.Contains(txtTimKiem.Text)).ToList();
         }
 
         //private void btnUploadImage_Click(object sender, EventArgs e)

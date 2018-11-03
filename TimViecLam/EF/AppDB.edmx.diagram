@@ -5,20 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4de859ab44154281a4a01cae05ef581d" Name="Diagram1">
-        <EntityTypeShape EntityType="TimViecLamModel.CtPhieuDangTuyen" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.DanhSachCongViec" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.HoSoXinViec" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.NguoiTimViec" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.NhanVien" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.NhaTuyenDung" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TimViecLamModel.PhieuDangTuyen" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
-        <AssociationConnector Association="TimViecLamModel.FK__CtPhieuDa__MaDan__21B6055D" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__CtPhieuDa__MaPhi__20C1E124" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaDan__1ED998B2" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaNgu__1DE57479" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaNha__1FCDBCEB" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__PhieuDang__MaNha__1CF15040" ManuallyRouted="false" />
-        <AssociationConnector Association="TimViecLamModel.FK__PhieuDang__MaNha__1BFD2C07" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TimViecLamModel.CtPhieuDangTuyen" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="TimViecLamModel.DanhSachCongViec" Width="1.5" PointX="3.75" PointY="8.5" />
+        <EntityTypeShape EntityType="TimViecLamModel.HoSoXinViec" Width="1.5" PointX="6" PointY="5" />
+        <EntityTypeShape EntityType="TimViecLamModel.NguoiTimViec" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TimViecLamModel.NhanVien" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="TimViecLamModel.NhaTuyenDung" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="TimViecLamModel.PhieuDangTuyen" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="TimViecLamModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" />
+        <AssociationConnector Association="TimViecLamModel.FK__CtPhieuDa__MaDan__21B6055D" />
+        <AssociationConnector Association="TimViecLamModel.FK__CtPhieuDa__MaPhi__20C1E124" />
+        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaDan__1ED998B2" />
+        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaNgu__1DE57479" />
+        <AssociationConnector Association="TimViecLamModel.FK__HoSoXinVi__MaNha__1FCDBCEB" />
+        <AssociationConnector Association="TimViecLamModel.FK__PhieuDang__MaNha__1CF15040" />
+        <AssociationConnector Association="TimViecLamModel.FK__PhieuDang__MaNha__1BFD2C07" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

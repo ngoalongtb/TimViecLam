@@ -26,7 +26,6 @@ namespace TimViecLam.EF
         public string GioiTinh { get; set; }
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
-        public string HinhAnh { get; set; }
         public string TrinhDo { get; set; }
         public string ChuyenNganh { get; set; }
         public string BangCap { get; set; }

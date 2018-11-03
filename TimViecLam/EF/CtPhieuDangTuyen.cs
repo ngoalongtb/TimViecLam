@@ -15,7 +15,7 @@ namespace TimViecLam.EF
     public partial class CtPhieuDangTuyen
     {
         public int MaPhieuDangTuyen { get; set; }
-        public Nullable<int> MaDanhSachCongViec { get; set; }
+        public int MaDanhSachCongViec { get; set; }
         public string TrinhDo { get; set; }
         public Nullable<System.DateTime> ThoiHan { get; set; }
         public Nullable<int> SoLuongTuyenDung { get; set; }

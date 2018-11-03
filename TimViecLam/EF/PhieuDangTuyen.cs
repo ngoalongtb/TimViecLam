@@ -14,12 +14,19 @@ namespace TimViecLam.EF
     
     public partial class PhieuDangTuyen
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PhieuDangTuyen()
+        {
+            this.CtPhieuDangTuyens = new HashSet<CtPhieuDangTuyen>();
+        }
+    
         public int MaPhieuDangTuyen { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public Nullable<int> MaNhaTuyenDung { get; set; }
         public Nullable<int> MaNhanVien { get; set; }
     
-        public virtual CtPhieuDangTuyen CtPhieuDangTuyen { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CtPhieuDangTuyen> CtPhieuDangTuyens { get; set; }
         public virtual NhanVien NhanVien { get; set; }
         public virtual NhaTuyenDung NhaTuyenDung { get; set; }
     }

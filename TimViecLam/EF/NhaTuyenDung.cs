@@ -26,7 +26,6 @@ namespace TimViecLam.EF
         public string DienThoai { get; set; }
         public string DiaChiWeb { get; set; }
         public string GioiThieu { get; set; }
-        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuDangTuyen> PhieuDangTuyens { get; set; }

@@ -32,5 +32,6 @@ namespace TimViecLam.EF
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<NhaTuyenDung> NhaTuyenDungs { get; set; }
         public virtual DbSet<PhieuDangTuyen> PhieuDangTuyens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

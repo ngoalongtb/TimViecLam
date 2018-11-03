@@ -36,7 +36,7 @@ namespace TimViecLam.Screen
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x.CtPhieuDangTuyen.MaDanhSachCongViec, x.CtPhieuDangTuyen.TrinhDo, x.CtPhieuDangTuyen.ThoiHan, x.CtPhieuDangTuyen.SoLuongTuyenDung, x.CtPhieuDangTuyen.NoiLamViec, x.CtPhieuDangTuyen.LuongKhoiDiem, x.CtPhieuDangTuyen.MoTaYeuCau, x }).ToList();
+            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x }).ToList();
         }
         public void ChangHeader()
         {
@@ -55,19 +55,19 @@ namespace TimViecLam.Screen
         }
         public void LoadDataBinding()
         {
-            txtMaPhieuDangTuyen.DataBindings.Add("Text", dtgv.DataSource, "MaPhieuDangTuyen", true, DataSourceUpdateMode.Never);
-            dtpkNgayLap.DataBindings.Add("Value", dtgv.DataSource, "NgayLap", true, DataSourceUpdateMode.Never);
-            cbxMaNTD.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhaTuyenDung", true, DataSourceUpdateMode.Never);
-            cbxMaNhanVien.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhanVien", true, DataSourceUpdateMode.Never);
+            //txtMaPhieuDangTuyen.DataBindings.Add("Text", dtgv.DataSource, "MaPhieuDangTuyen", true, DataSourceUpdateMode.Never);
+            //dtpkNgayLap.DataBindings.Add("Value", dtgv.DataSource, "NgayLap", true, DataSourceUpdateMode.Never);
+            //cbxMaNTD.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhaTuyenDung", true, DataSourceUpdateMode.Never);
+            //cbxMaNhanVien.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaNhanVien", true, DataSourceUpdateMode.Never);
 
-            cbxMaDanhSachCongViec.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaDanhSachCongViec", true, DataSourceUpdateMode.Never);
-            txtTrinhDo.DataBindings.Add("Text", dtgv.DataSource, "TrinhDo", true, DataSourceUpdateMode.Never);
-            dtpkThoiHan.DataBindings.Add("Value", dtgv.DataSource, "ThoiHan", true, DataSourceUpdateMode.Never);
+            //cbxMaDanhSachCongViec.DataBindings.Add("SelectedValue", dtgv.DataSource, "MaDanhSachCongViec", true, DataSourceUpdateMode.Never);
+            //txtTrinhDo.DataBindings.Add("Text", dtgv.DataSource, "TrinhDo", true, DataSourceUpdateMode.Never);
+            //dtpkThoiHan.DataBindings.Add("Value", dtgv.DataSource, "ThoiHan", true, DataSourceUpdateMode.Never);
 
-            txtSoLuongTuyenDung.DataBindings.Add("Text", dtgv.DataSource, "SoLuongTuyenDung", true, DataSourceUpdateMode.Never);
-            txtNoiLamViec.DataBindings.Add("Text", dtgv.DataSource, "NoiLamViec", true, DataSourceUpdateMode.Never);
-            txtMoTaYeuCau.DataBindings.Add("Text", dtgv.DataSource, "MoTaYeuCau", true, DataSourceUpdateMode.Never);
-            txtLuongKhoiDiem.DataBindings.Add("Text", dtgv.DataSource, "LuongKhoiDiem", true, DataSourceUpdateMode.Never);
+            //txtSoLuongTuyenDung.DataBindings.Add("Text", dtgv.DataSource, "SoLuongTuyenDung", true, DataSourceUpdateMode.Never);
+            //txtNoiLamViec.DataBindings.Add("Text", dtgv.DataSource, "NoiLamViec", true, DataSourceUpdateMode.Never);
+            //txtMoTaYeuCau.DataBindings.Add("Text", dtgv.DataSource, "MoTaYeuCau", true, DataSourceUpdateMode.Never);
+            //txtLuongKhoiDiem.DataBindings.Add("Text", dtgv.DataSource, "LuongKhoiDiem", true, DataSourceUpdateMode.Never);
             
         }
 
@@ -81,9 +81,9 @@ namespace TimViecLam.Screen
             cbxMaNhanVien.DisplayMember = "TaiKhoan";
             cbxMaNhanVien.ValueMember = "MaNhanVien";
 
-            cbxMaDanhSachCongViec.DataSource = db.DanhSachCongViecs.ToList();
-            cbxMaDanhSachCongViec.DisplayMember = "ViTriViecLam";
-            cbxMaDanhSachCongViec.ValueMember = "MaDanhSachCongViec";
+            //cbxMaDanhSachCongViec.DataSource = db.DanhSachCongViecs.ToList();
+            //cbxMaDanhSachCongViec.DisplayMember = "ViTriViecLam";
+            //cbxMaDanhSachCongViec.ValueMember = "MaDanhSachCongViec";
 
 
         }
@@ -97,20 +97,19 @@ namespace TimViecLam.Screen
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
             PhieuDangTuyen phieuDangTuyen = new PhieuDangTuyen();
             phieuDangTuyen.NgayLap = DateTime.Now;
             phieuDangTuyen.MaNhaTuyenDung = (int)cbxMaNTD.SelectedValue;
             phieuDangTuyen.MaNhanVien = (int)cbxMaNhanVien.SelectedValue;
 
-            phieuDangTuyen.CtPhieuDangTuyen = new CtPhieuDangTuyen();
-            phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
-            phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
-            phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
-            phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
-            phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
-            phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
-            phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
+            //phieuDangTuyen.CtPhieuDangTuyen = new CtPhieuDangTuyen();
+            //phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
+            //phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
+            //phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
+            //phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
+            //phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
+            //phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
+            //phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
 
 
             try
@@ -138,13 +137,13 @@ namespace TimViecLam.Screen
                 phieuDangTuyen.MaNhaTuyenDung = (int)cbxMaNTD.SelectedValue;
                 phieuDangTuyen.MaNhanVien = (int)cbxMaNhanVien.SelectedValue;
                 
-                phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
-                phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
-                phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
-                phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
-                phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
-                phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
-                phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
+                //phieuDangTuyen.CtPhieuDangTuyen.MaDanhSachCongViec = (int)cbxMaDanhSachCongViec.SelectedValue;
+                //phieuDangTuyen.CtPhieuDangTuyen.MoTaYeuCau = txtMoTaYeuCau.Text;
+                //phieuDangTuyen.CtPhieuDangTuyen.NoiLamViec = txtNoiLamViec.Text;
+                //phieuDangTuyen.CtPhieuDangTuyen.ThoiHan = dtpkThoiHan.Value;
+                //phieuDangTuyen.CtPhieuDangTuyen.TrinhDo = txtTrinhDo.Text;
+                //phieuDangTuyen.CtPhieuDangTuyen.LuongKhoiDiem = int.Parse(txtLuongKhoiDiem.Text);
+                //phieuDangTuyen.CtPhieuDangTuyen.SoLuongTuyenDung = int.Parse(txtSoLuongTuyenDung.Text);
 
 
                 db.SaveChanges();
@@ -188,7 +187,7 @@ namespace TimViecLam.Screen
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x.CtPhieuDangTuyen.MaDanhSachCongViec, x.CtPhieuDangTuyen.TrinhDo, x.CtPhieuDangTuyen.ThoiHan, x.CtPhieuDangTuyen.SoLuongTuyenDung, x.CtPhieuDangTuyen.NoiLamViec, x.CtPhieuDangTuyen.LuongKhoiDiem, x.CtPhieuDangTuyen.MoTaYeuCau, x }).Where(x => x.MaPhieuDangTuyen.ToString().Contains(txtTimKiem.Text)).ToList();
+            bds.DataSource = db.PhieuDangTuyens.Select(x => new { x.MaPhieuDangTuyen, x.NgayLap, x.MaNhaTuyenDung, x.MaNhanVien, x }).Where(x => x.MaPhieuDangTuyen.ToString().Contains(txtTimKiem.Text)).ToList();
         }
 
     }

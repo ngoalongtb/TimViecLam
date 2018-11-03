@@ -33,7 +33,7 @@ namespace TimViecLam.Screen
 
         public void LoadDtgv()
         {
-            bds.DataSource = db.NguoiTimViecs.Select(x => new { x.MaNguoiTimViec, x.HoTen, x.NgaySinh, x.GioiTinh, x.DiaChi, x.DienThoai, x.HinhAnh, x.TrinhDo, x.ChuyenNganh, x.BangCap, x }).ToList();
+            bds.DataSource = db.NguoiTimViecs.Select(x => new { x.MaNguoiTimViec, x.HoTen, x.NgaySinh, x.GioiTinh, x.DiaChi, x.DienThoai, x.TrinhDo, x.ChuyenNganh, x.BangCap, x }).ToList();
         }
         public void ChangHeader()
         {
@@ -43,7 +43,6 @@ namespace TimViecLam.Screen
             dtgv.Columns["GioiTinh"].HeaderText = "Giới tính";
             dtgv.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dtgv.Columns["DienThoai"].HeaderText = "Điện thoại";
-            dtgv.Columns["HinhAnh"].HeaderText = "Hình ảnh";
             dtgv.Columns["TrinhDo"].HeaderText = "Trình độ";
             dtgv.Columns["ChuyenNganh"].HeaderText = "Chuyên ngành";
             dtgv.Columns["BangCap"].HeaderText = "Bằng cấp";
@@ -56,7 +55,6 @@ namespace TimViecLam.Screen
             txtGioiTinh.DataBindings.Add("Text", dtgv.DataSource, "GioiTinh", true, DataSourceUpdateMode.Never);
             txtDiaChi.DataBindings.Add("Text", dtgv.DataSource, "DiaChi", true, DataSourceUpdateMode.Never);
             txtDienThoai.DataBindings.Add("Text", dtgv.DataSource, "DienThoai", true, DataSourceUpdateMode.Never);
-            txtHinhAnh.DataBindings.Add("Text", dtgv.DataSource, "HinhAnh", true, DataSourceUpdateMode.Never);
             txtTrinhDo.DataBindings.Add("Text", dtgv.DataSource, "TrinhDo", true, DataSourceUpdateMode.Never);
             txtChuyenNganh.DataBindings.Add("Text", dtgv.DataSource, "ChuyenNganh", true, DataSourceUpdateMode.Never);
             txtBangCap.DataBindings.Add("Text", dtgv.DataSource, "BangCap", true, DataSourceUpdateMode.Never);
@@ -84,7 +82,6 @@ namespace TimViecLam.Screen
             service.GioiTinh = txtGioiTinh.Text;
             service.DiaChi = txtDiaChi.Text;
             service.DienThoai = txtDienThoai.Text;
-            service.HinhAnh = txtHinhAnh.Text;
             service.TrinhDo = txtTrinhDo.Text;
             service.ChuyenNganh = txtChuyenNganh.Text;
             service.BangCap = txtBangCap.Text;
@@ -120,7 +117,6 @@ namespace TimViecLam.Screen
                 service.GioiTinh = txtGioiTinh.Text;
                 service.DiaChi = txtDiaChi.Text;
                 service.DienThoai = txtDienThoai.Text;
-                service.HinhAnh = txtHinhAnh.Text;
                 service.TrinhDo = txtTrinhDo.Text;
                 service.ChuyenNganh = txtChuyenNganh.Text;
                 service.BangCap = txtBangCap.Text;
@@ -171,7 +167,7 @@ namespace TimViecLam.Screen
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            bds.DataSource = db.NguoiTimViecs.Select(x => new { x.MaNguoiTimViec, x.HoTen, x.NgaySinh, x.DiaChi, x.DienThoai, x.GioiTinh, x.HinhAnh, x.TrinhDo, x.ChuyenNganh, x.BangCap }).Where(x => x.MaNguoiTimViec.ToString().Contains(txtTimKiem.Text) || x.HoTen.Contains(txtTimKiem.Text)).ToList();
+            bds.DataSource = db.NguoiTimViecs.Select(x => new { x.MaNguoiTimViec, x.HoTen, x.NgaySinh, x.DiaChi, x.DienThoai, x.GioiTinh, x.TrinhDo, x.ChuyenNganh, x.BangCap }).Where(x => x.MaNguoiTimViec.ToString().Contains(txtTimKiem.Text) || x.HoTen.Contains(txtTimKiem.Text)).ToList();
         }
 
      
